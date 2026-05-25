@@ -1,0 +1,2 @@
+"""Endovascular BeamAdapter demo scene."""
+
