@@ -1,4 +1,4 @@
-# Endovascular SOFA Simulation
+# A simulation environment for robot-assisted endovascular interventions
 
 ![Endovascular phantom](figures/phantom.png)
 
