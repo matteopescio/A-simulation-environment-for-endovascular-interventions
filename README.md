@@ -2,11 +2,9 @@
 
 ![Endovascular phantom](figures/phantom.png)
 
-This repository contains SOFA scenes for robot-assisted endovascular intervention simulation. The code accompanies the work published in **"A simulation environment for robot-assisted endovascular interventions"**:
+This repository contains SOFA scenes for robot-assisted endovascular intervention simulation. The code accompanies the work published in [Pescio, M., Li, C., Kundrat, D. et al. A simulation environment for robot-assisted endovascular interventions. Int J CARS 20, 2259–2267 (2025)](https://link.springer.com/article/10.1007/s11548-025-03458-2)
 
-https://link.springer.com/article/10.1007/s11548-025-03458-2
-
-[SOFA](https://github.com/sofa-framework/sofa) is an open-source framework for real-time multi-physics simulation, with strong support for deformable models, collision, constraints, and medical simulation workflows. This project also uses the [BeamAdapter](https://github.com/sofa-framework/BeamAdapter) plugin, which provides beam and Kirchhoff-rod based models for flexible 1D structures such as catheters and guide-like devices.
+[SOFA](https://github.com/sofa-framework/sofa) is an open-source framework for real-time multi-physics simulation, with strong support for deformable models, collision, constraints, and medical simulation workflows. This project also uses the [BeamAdapter](https://github.com/sofa-framework/BeamAdapter) plugin, which provides beam and Kirchhoff-rod based models for flexible 1D structures such as catheters and guidewires.
 
 For installation, use the latest SOFA binaries from the official download page:
 
