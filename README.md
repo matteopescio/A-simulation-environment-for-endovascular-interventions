@@ -37,19 +37,18 @@ The repository provides two main SOFA entry points:
 
 ## Force And Shape Sensing Scenario
 
-Run:
-
-```bash
-runSofa forces.py
-```
-
 ![Force application](media/forces_displacement.png)
 
 The force scene loads the `AbdominalAorticAneurysm` tetrahedral mesh and lets the user apply a constant force to a BoxROI. 
 
 ![Force displacement](media/forces.png)
 
-Select a FEM model:
+Run:
+
+```bash
+runSofa forces.py
+```
+Select a different FEM model:
 
 ```bash
 runSofa forces.py --argv "--fem Elastic"
