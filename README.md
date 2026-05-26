@@ -32,22 +32,22 @@ To test the code of this repository:
 
 The repository provides two main SOFA entry points:
 
-- `forces.py`: deformable abdominal aortic aneurysm phantom with an ROI force loading interface for force/displacement studies.
-- `catheter.py`: deformable abdominal aorta phantom with a single J-shaped BeamAdapter catheter for insertion experiments.
+- `forces.py`: deformable abdominal aortic aneurysm phantom with an ROI force loading interface for force/displacement sensing.
+- `catheter.py`: deformable abdominal aorta phantom with a single catheter for insertion simulation.
 
 ## Force And Shape Sensing Scenario
-
-![Force application](media/forces.png)
-
-The force scene loads the `AbdominalAorticAneurysm` tetrahedral mesh and lets the user apply a constant force to a BoxROI. 
-
-![Force displacement](media/forces_displacement.png)
 
 Run:
 
 ```bash
 runSofa forces.py
 ```
+
+![Force application](media/forces_displacement.png)
+
+The force scene loads the `AbdominalAorticAneurysm` tetrahedral mesh and lets the user apply a constant force to a BoxROI. 
+
+![Force displacement](media/forces.png)
 
 Select a FEM model:
 
