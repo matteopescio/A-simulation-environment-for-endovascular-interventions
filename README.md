@@ -1,18 +1,32 @@
 # A simulation environment for robot-assisted endovascular interventions
 
-![Endovascular phantom](figures/phantom.png)
+![Endovascular phantom](media/phantom.png)
 
-This repository contains SOFA scenes for robot-assisted endovascular intervention simulation. The code accompanies the work published in [Pescio, M., Li, C., Kundrat, D. et al. A simulation environment for robot-assisted endovascular interventions. Int J CARS 20, 2259–2267 (2025)](https://link.springer.com/article/10.1007/s11548-025-03458-2)
+This repository contains physics-based simulation scenarios for robot-assisted endovascular interventions built using the SOFA Framework. 
+The code is part of the work published in [Pescio, M., Li, C., Kundrat, D. et al. A simulation environment for robot-assisted endovascular interventions. Int J CARS 20, 2259–2267 (2025)](https://link.springer.com/article/10.1007/s11548-025-03458-2)
 
 [SOFA](https://github.com/sofa-framework/sofa) is an open-source framework for real-time multi-physics simulation, with strong support for deformable models, collision, constraints, and medical simulation workflows. This project also uses the [BeamAdapter](https://github.com/sofa-framework/BeamAdapter) plugin, which provides beam and Kirchhoff-rod based models for flexible 1D structures such as catheters and guidewires.
 
-For installation, use the latest SOFA binaries from the official download page:
+## Getting Started
 
-https://www.sofa-framework.org/download/
+If you are new to SOFA, the [official documentation](https://sofa-framework.github.io/doc/) is the best starting point.
 
-If you are new to SOFA, the official documentation is the best starting point:
+To test the code of this repository:
 
-https://sofa-framework.github.io/doc/
+1. Install the latest SOFA binaries ([v25.12.00](https://www.sofa-framework.org/download/))
+2. Add the SOFA ```bin``` folder to your ```PATH```: 
+   ```
+   echo 'export PATH="$PATH:YOUR_PATH/SOFA/bin"' >> ~/.bashrc
+   source ~/.bashrc
+   ```
+3. Test the installation:
+    ```
+    runSofa
+    ```
+4. Clone this repository:
+    ```
+    git clone https://github.com/matteopescio/A-simulation-environment-for-endovascular-interventions.git
+    ```
 
 ## Project Content
 
@@ -21,15 +35,13 @@ The repository provides two main SOFA entry points:
 - `forces.py`: deformable abdominal aortic aneurysm phantom with an ROI force loading interface for force/displacement studies.
 - `catheter.py`: deformable abdominal aorta phantom with a single J-shaped BeamAdapter catheter for insertion experiments.
 
-The shared implementation is in `scripts/`. Meshes are in `meshes/`, example CSV outputs are in `data/`, and figures used in this README are in `figures/`.
-
 ## Force And Shape Sensing Scenario
 
-![Force application](figures/forces.png)
+![Force application](media/forces.png)
 
-The force scene loads the `AbdominalAorticAneurysm` tetrahedral mesh and lets the user apply a constant force to a BoxROI. The selected ROI nodes are recorded as displacement signals, together with the force modulus, so the resulting CSV can relate applied force to measured deformation.
+The force scene loads the `AbdominalAorticAneurysm` tetrahedral mesh and lets the user apply a constant force to a BoxROI. 
 
-![Force displacement](figures/forces_displacement.png)
+![Force displacement](media/forces_displacement.png)
 
 Run:
 
@@ -59,9 +71,9 @@ data/forces_FEMTYPE_YYYYMMDD_HHMMSS.csv
 
 ## Catheter Insertion Scenario
 
-![Catheter insertion](figures/catheter_insertion.png)
+![Catheter insertion](media/catheter_insertion.png)
 
-The catheter scene loads the simplified `AbdominalAorta` mesh and inserts one J-shaped catheter modeled with BeamAdapter components. The scene keeps the vessel deformable and uses collision/constraint response and a centerline-based virtual fixture to guide the device inside the phantom.
+The catheter scene loads the simplified `AbdominalAorta` mesh and inserts one catheter modeled with BeamAdapter components. The scene keeps the vessel deformable and uses collision/constraint response and a centerline-based virtual fixture to guide the device inside the phantom.
 
 Run:
 
@@ -92,13 +104,22 @@ Endovascular/
   catheter.py                  # Main catheter insertion scene
   forces.py                    # Main force/displacement scene
   data/                        # Example and recorded CSV files
-  figures/                     # Images for documentation
+  media/                       # Files for documentation
   meshes/                      # STL/MSH geometry and FEM meshes
   scripts/                     # Shared SOFA scene implementation
 ```
 
-## Notes
+## Citing
 
-- The scenes are written for SOFA Python scenes and should be launched with `runSofa`.
-- The code assumes that the BeamAdapter plugin is available in the SOFA installation.
-- Paths are resolved relative to this repository, so the code does not depend on a local hardcoded SOFA installation path.
+If you use the project in your work, please consider citing with:
+
+```bibtex
+@article{pescio2025simulation,
+  title={A simulation environment for robot-assisted endovascular interventions},
+  author={Pescio, Matteo and Li, Chenhao and Kundrat, Dennis and Casadio, Maura and Dagnino, Giulio},
+  journal={International journal of computer assisted radiology and surgery},
+  pages={1--9},
+  year={2025},
+  publisher={Springer}
+}
+```
