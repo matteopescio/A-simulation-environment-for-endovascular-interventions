@@ -13,13 +13,13 @@ If you are new to SOFA, the [official documentation](https://sofa-framework.gith
 
 To test the code of this repository:
 
-1. Install the latest SOFA binaries ([v25.12.00](https://www.sofa-framework.org/download/))
+1. Install the latest SOFA binaries ([v25.12.00](https://www.sofa-framework.org/download/)) and follow the [instructions](https://sofapython3.readthedocs.io/en/latest/content/Installation.html#using-python3) to use SOFA within a Python3 environment
 2. Add the SOFA ```bin``` folder to your ```PATH```: 
    ```
    echo 'export PATH="$PATH:YOUR_PATH/SOFA/bin"' >> ~/.bashrc
    source ~/.bashrc
    ```
-3. Test the installation:
+3. Test the installation launching the [SOFA default compilation](https://sofa-framework.github.io/doc/using-sofa/runsofa/):
     ```
     runSofa
     ```
